@@ -9,14 +9,20 @@ const Legend: React.SFC = () => (
   <div id="legend" className="legend">
     <div className="legend-section">
       <div className="legend-grid">
-        <div>
-          <TrailIcon />
-        </div>
-        <div className="legend-label">sidewalks & trails</div>
-        <div>
-          <BikeRackIcon />
-        </div>
-        <div className="legend-label">bike racks</div>
+        <TrailIcon color="#e7185a" />
+        <div className="legend-label">Shared Roadway</div>
+        <TrailIcon color="#FFA500" />
+        <div className="legend-label">Bike Lane</div>
+        <TrailIcon color="#90EE90" />
+        <div className="legend-label">Buffered Bike Lane</div>
+        <TrailIcon color="#50C878" />
+        <div className="legend-label">Protected Bike Lane</div>
+        <TrailIcon color="#006400" />
+        <div className="legend-label">Shared Use Path</div>
+        <TrailIcon color="#A0522D" />
+        <div className="legend-label">Trail</div>
+        <BikeRackIcon />
+        <div className="legend-label">Bike Rack</div>
       </div>
     </div>
     <div className="legend-section source-notes">

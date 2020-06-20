@@ -11,7 +11,7 @@ This is an interactive map of bike racks and trails and sidewalks in Denver.
 
 ## Resources
 
-- [Denver Trails and Sidewalks Data](https://www.denvergov.org/opendata/dataset/city-and-county-of-denver-trails-and-sidewalks)
+- [Denver Existing Bicycle Facilities](https://www.denvergov.org/opendata/dataset/city-and-county-of-denver-existing-denver-bicycle-facilities)
 - [Denver Bike Racks Data](https://www.denvergov.org/opendata/dataset/city-and-county-of-denver-bike-racks)
 - [Mapbox GL JS](https://docs.mapbox.com/mapbox-gl-js/)
 - [Create React App](https://github.com/facebook/create-react-app)

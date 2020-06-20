@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { HTMLAttributes } from 'react';
 
-const TrailIcon: React.SFC = () => (
+interface TrailIconProps extends HTMLAttributes<HTMLElement> {
+  color: string;
+}
+
+const TrailIcon: React.SFC<TrailIconProps> = ({ color }) => (
   <svg className="legend-icon" viewBox="0 0 24 24">
-    <rect x="6" y="12" width="12" height="3" fill="#e7185a" />
+    <rect x="6" y="12" width="12" height="3" fill={color} style={{ opacity: 0.8 }} />
   </svg>
 );
 
