@@ -1,4 +1,4 @@
-# Denver Bikes
+# Denver Bikes [![Netlify Status](https://api.netlify.com/api/v1/badges/3714c0a4-54cd-4324-ae9d-b28cb7d3ac15/deploy-status)](https://app.netlify.com/sites/denver-bikes/deploys)
 
 This is an interactive map of bike racks and trails and sidewalks in Denver.
 
