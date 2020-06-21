@@ -4,7 +4,7 @@ import './_header.css';
 
 const Header: React.SFC = () => (
   <header>
-    <h1>Denver Bikes</h1>A map of publicly maintained bike infrastructure
+    <h1>Denver Bikes</h1>
   </header>
 );
 

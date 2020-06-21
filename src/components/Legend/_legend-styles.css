@@ -9,8 +9,15 @@
   z-index: 1;
 }
 
+.legend-label {
+  font-weight: 600;
+}
+
 .legend-section {
   display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
   margin: 0;
   padding: 10px;
 }
@@ -54,3 +61,6 @@ a:active {
   color: #585858;
 }
 
+.ReactCollapse--collapse {
+  transition: height 500ms;
+}
