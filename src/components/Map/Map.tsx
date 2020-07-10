@@ -42,23 +42,20 @@ const App: React.SFC = () => {
             cluster: true,
             clusterMaxZoom: 13,
           })
-          .addLayer(
-            {
-              id: BIKE_RACKS_CLUSTERS_LAYER,
-              source: BIKE_RACKS_SOURCE,
-              type: 'circle',
-              filter: ['has', 'point_count'],
-              paint: {
-                'circle-color': '#51bbd6',
-                'circle-opacity': 0.9,
-                'circle-radius': ['step', ['get', 'point_count'], 10, 10, 20, 50, 30],
-                'circle-stroke-width': 2,
-                'circle-stroke-color': '#fff',
-                'circle-stroke-opacity': 0.8,
-              },
+          .addLayer({
+            id: BIKE_RACKS_CLUSTERS_LAYER,
+            source: BIKE_RACKS_SOURCE,
+            type: 'circle',
+            filter: ['has', 'point_count'],
+            paint: {
+              'circle-color': '#51bbd6',
+              'circle-opacity': 0.9,
+              'circle-radius': ['step', ['get', 'point_count'], 10, 10, 20, 50, 30],
+              'circle-stroke-width': 2,
+              'circle-stroke-color': '#fff',
+              'circle-stroke-opacity': 0.8,
             },
-            'waterway-label'
-          )
+          })
           .addLayer({
             id: BIKE_RACKS_CLUSTER_COUNT_LAYER,
             source: BIKE_RACKS_SOURCE,
@@ -88,8 +85,12 @@ const App: React.SFC = () => {
               source: BIKE_FACILITIES_SOURCE,
               'source-layer': 'existing_denver_bike_faciliti-75fq6h',
               type: 'line',
+              layout: {
+                'line-cap': 'round',
+                'line-join': 'bevel',
+              },
               paint: {
-                'line-width': 3,
+                'line-width': ['interpolate', ['exponential', 10], ['zoom'], 12, 3, 13, 6],
                 'line-opacity': 0.6,
                 'line-color': [
                   'match',
@@ -110,7 +111,7 @@ const App: React.SFC = () => {
                 ],
               },
             },
-            BIKE_RACKS_CLUSTERS_LAYER
+            'road-label'
           )
           .on('mouseenter', BIKE_FACILITIES_LAYER, (e) => {
             if (e.features && e.features.length && mapRef.current) {
@@ -123,7 +124,7 @@ const App: React.SFC = () => {
             }
             popUpRef.current.remove();
           })
-          .on('mousemove', BIKE_FACILITIES_LAYER, (e) => {
+          .on('click', BIKE_FACILITIES_LAYER, (e) => {
             if (e.features && e.features.length) {
               const { lat, lng } = e.lngLat;
               const feature = e.features[0];
