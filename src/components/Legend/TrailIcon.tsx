@@ -13,7 +13,7 @@ const TrailIcon: React.SFC<TrailIconProps> = ({ label, color }) => {
         <title id={labelAsId}>{label}</title>
         <rect x="6" y="12" width="12" height="3" fill={color} style={{ opacity: 0.8 }} />
       </svg>
-      <div className="legend-label">{label}</div>
+      {label}
     </>
   );
 };
