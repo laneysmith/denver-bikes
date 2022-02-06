@@ -15,7 +15,7 @@ const Legend: React.SFC = () => {
       <div className="legend-section">
         <div className="legend-label">Legend</div>
         <button type="button" onClick={toggleLegend} aria-label="toggle legend visibility">
-          {isLegendCollapsed ? 'show' : 'hide'}
+          {isLegendCollapsed ? 'Show' : 'Hide'}
         </button>
       </div>
       <Collapse isOpened={!isLegendCollapsed}>

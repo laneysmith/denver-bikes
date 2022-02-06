@@ -25,7 +25,7 @@
 .labels {
   flex-direction: column;
   align-items: flex-start;
-  max-width: 20px;
+  max-width: 210px;
 }
 
 label {
