@@ -22,6 +22,16 @@
   padding: 10px;
 }
 
+.labels {
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 20px;
+}
+
+label {
+  font-weight: 800;
+}
+
 .legend-section:not(:last-child) {
   border-bottom: 1px solid #efefef;
 }

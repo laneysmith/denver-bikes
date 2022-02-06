@@ -6,7 +6,7 @@ const BikeRackIcon: React.SFC = () => (
       <title id="BikeRackIcon">Bike Rack</title>
       <circle cx="12" cy="12" r="5" fill="#51bbd6" />
     </svg>
-    <div className="legend-label">Bike Rack</div>
+    Bike Rack
   </>
 );
 

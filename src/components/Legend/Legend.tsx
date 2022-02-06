@@ -20,14 +20,18 @@ const Legend: React.SFC = () => {
       </div>
       <Collapse isOpened={!isLegendCollapsed}>
         <>
-          <div className="legend-section">
+          <div className="legend-section labels">
+            <label>Path type, listed most preferred (safest) to least preferred</label>
             <div className="legend-grid">
-              <TrailIcon label="Shared Roadway" color="#e7185a" />
-              <TrailIcon label="Bike Lane" color="#FFA500" />
-              <TrailIcon label="Buffered Bike Lane" color="#90EE90" />
-              <TrailIcon label="Protected Bike Lane" color="#50C878" />
-              <TrailIcon label="Shared Use Path" color="#006400" />
               <TrailIcon label="Trail" color="#A0522D" />
+              <TrailIcon label="Shared Use Path" color="#006400" />
+              <TrailIcon label="Protected Bike Lane" color="#50C878" />
+              <TrailIcon label="Buffered Bike Lane" color="#90EE90" />
+              <TrailIcon label="Bike Lane" color="#FFA500" />
+              <TrailIcon label="Shared Roadway" color="#e7185a" />
+            </div>
+            <label>Bike resources</label>
+            <div className="legend-grid">
               <BikeRackIcon />
             </div>
           </div>
