@@ -6,7 +6,7 @@ import TrailIcon from './TrailIcon';
 
 import './_legend-styles.css';
 
-const Legend: React.SFC = () => {
+const Legend: React.FC = () => {
   const [isLegendCollapsed, setIsLegendCollapsed] = useState(false);
   const toggleLegend = (): void => setIsLegendCollapsed((prevState) => !prevState);
 

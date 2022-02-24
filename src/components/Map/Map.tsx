@@ -15,7 +15,7 @@ const BIKE_RACKS_CLUSTERS_LAYER = 'bike-racks-clusters-layer';
 const BIKE_RACKS_CLUSTER_COUNT_LAYER = 'bike-racks-cluster-count-layer';
 const BIKE_RACKS_UNCLUSTERED_POINT_LAYER = 'bike-racks-unclustered-point-layer';
 
-const App: React.SFC = () => {
+const App: React.FC = () => {
   const mapRef = useRef<Map | null>();
   const mapContainerRef = useRef<HTMLDivElement>(document.createElement('div'));
   const popUpRef = useRef<PopupType>(new mapboxgl.Popup({ offset: 15, closeButton: false }));
@@ -49,9 +49,9 @@ const App: React.SFC = () => {
             filter: ['has', 'point_count'],
             paint: {
               'circle-color': '#51bbd6',
-              'circle-opacity': 0.9,
+              'circle-opacity': 0.7,
               'circle-radius': ['step', ['get', 'point_count'], 10, 10, 20, 50, 30],
-              'circle-stroke-width': 2,
+              'circle-stroke-width': 1,
               'circle-stroke-color': '#fff',
               'circle-stroke-opacity': 0.8,
             },
@@ -90,8 +90,7 @@ const App: React.SFC = () => {
                 'line-join': 'bevel',
               },
               paint: {
-                'line-width': ['interpolate', ['exponential', 10], ['zoom'], 12, 3, 13, 6],
-                'line-opacity': 0.6,
+                'line-width': ['interpolate', ['exponential', 10], ['zoom'], 12, 4, 13, 6],
                 'line-color': [
                   'match',
                   ['get', 'EXISTING_F'],
@@ -124,7 +123,7 @@ const App: React.SFC = () => {
             }
             popUpRef.current.remove();
           })
-          .on('click', BIKE_FACILITIES_LAYER, (e) => {
+          .on('mouseover', BIKE_FACILITIES_LAYER, (e) => {
             if (e.features && e.features.length) {
               const { lat, lng } = e.lngLat;
               const feature = e.features[0];
