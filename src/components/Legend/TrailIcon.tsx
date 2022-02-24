@@ -5,7 +5,7 @@ interface TrailIconProps extends HTMLAttributes<HTMLElement> {
   color: string;
 }
 
-const TrailIcon: React.SFC<TrailIconProps> = ({ label, color }) => {
+const TrailIcon: React.FC<TrailIconProps> = ({ label, color }) => {
   const labelAsId = `${label.replace(/\s/g, '')}Icon`;
   return (
     <>

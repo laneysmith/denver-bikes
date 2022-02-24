@@ -1,6 +1,6 @@
 import React from 'react';
 
-const BikeRackIcon: React.SFC = () => (
+const BikeRackIcon: React.FC = () => (
   <>
     <svg className="legend-icon" viewBox="0 0 24 24" aria-labelledby="BikeRackIcon" role="img">
       <title id="BikeRackIcon">Bike Rack</title>

@@ -7,7 +7,7 @@ interface PopupProps extends HTMLAttributes<HTMLElement> {
   feature: MapboxGeoJSONFeature;
 }
 
-const Popup: React.SFC<PopupProps> = ({ feature }) => {
+const Popup: React.FC<PopupProps> = ({ feature }) => {
   const { id, properties } = feature;
 
   return (
