@@ -58,6 +58,7 @@ label {
 }
 
 .source-notes {
+  display: block;
   color: #585858;
   font-size: 8pt;
   line-height: 10pt;
