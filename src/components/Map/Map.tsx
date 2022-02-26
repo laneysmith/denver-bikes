@@ -32,7 +32,7 @@ const App: React.FC = () => {
         mapRef?.current
           ?.addSource(BIKE_FACILITIES_SOURCE, {
             type: 'vector',
-            url: 'mapbox://laneysmith.4fgx6tj9',
+            url: 'mapbox://laneysmith.8icxakkj',
           })
           ?.addSource(BIKE_RACKS_SOURCE, {
             type: 'geojson',
@@ -83,7 +83,7 @@ const App: React.FC = () => {
             {
               id: BIKE_FACILITIES_LAYER,
               source: BIKE_FACILITIES_SOURCE,
-              'source-layer': 'existing_denver_bike_faciliti-75fq6h',
+              'source-layer': 'existing_denver_bike_faciliti-dhoves',
               type: 'line',
               layout: {
                 'line-cap': 'round',
@@ -93,7 +93,7 @@ const App: React.FC = () => {
                 'line-width': ['interpolate', ['exponential', 10], ['zoom'], 12, 4, 13, 6],
                 'line-color': [
                   'match',
-                  ['get', 'EXISTING_F'],
+                  ['get', 'type'],
                   'Shared Roadway',
                   '#E7185A',
                   'Bike Lane',

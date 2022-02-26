@@ -44,6 +44,7 @@ label {
   grid-row-gap: 0px;
   grid-auto-flow: row;
   padding: 0 6px 0 0;
+  align-items: center;
 }
 
 .legend-grid > div {
