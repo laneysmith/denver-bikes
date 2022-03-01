@@ -2,6 +2,8 @@
 
 This is an interactive map of bike racks and trails and sidewalks in Denver.
 
+![Screenshot of Denver Bikes](https://user-images.githubusercontent.com/11357045/156080572-799c0f1a-7a35-4a41-b043-1aa410566699.png "Screenshot of Denver Bikes")
+
 ## Quick start
 
 1. Install project dependencies: `yarn install`
