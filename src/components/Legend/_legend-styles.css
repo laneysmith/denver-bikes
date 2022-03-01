@@ -44,6 +44,7 @@ label {
   grid-row-gap: 0px;
   grid-auto-flow: row;
   padding: 0 6px 0 0;
+  align-items: center;
 }
 
 .legend-grid > div {
@@ -58,6 +59,7 @@ label {
 }
 
 .source-notes {
+  display: block;
   color: #585858;
   font-size: 8pt;
   line-height: 10pt;

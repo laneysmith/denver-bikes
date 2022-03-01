@@ -9,16 +9,23 @@ interface PopupProps extends HTMLAttributes<HTMLElement> {
 
 const Popup: React.FC<PopupProps> = ({ feature }) => {
   const { id, properties } = feature;
+  const formattedRoadLength = new Intl.NumberFormat('en-US', {
+    style: 'unit',
+    unit: 'mile',
+    unitDisplay: 'long',
+    maximumSignificantDigits: 2,
+  }).format(properties?.roadLength);
 
   return (
     <div id={`popup-${id}`}>
-      <h3>{properties?.FULLNAME}</h3>
-      <div>
-        <b>Type:</b> {properties?.EXISTING_F}
-      </div>
-      <div>
-        <b>Length:</b> {properties?.MILEAGE.toFixed(2)} miles
-      </div>
+      <h3>{properties?.name}</h3>
+      <label>Type:</label> {properties?.type}
+      <br />
+      <label>Length:</label> {formattedRoadLength}
+      <br />
+      <label>From:</label> {properties?.fromStreet}
+      <br />
+      <label>To:</label> {properties?.toStreet}
     </div>
   );
 };

@@ -36,12 +36,17 @@ const Legend: React.FC = () => {
             </div>
           </div>
           <div className="legend-section source-notes">
+            made by{' '}
+            <a href="https://laney.tech" target="_blank" rel="noopener noreferrer">
+              Laney Smith
+            </a>{' '}
+            |{' '}
             <a
               href="https://github.com/laneysmith/denver-bikes"
               target="_blank"
               rel="noopener noreferrer"
             >
-              view source on github
+              view source
             </a>
           </div>
         </>

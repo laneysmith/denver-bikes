@@ -11,7 +11,7 @@ const TrailIcon: React.FC<TrailIconProps> = ({ label, color }) => {
     <>
       <svg className="legend-icon" viewBox="0 0 24 24" aria-labelledby={labelAsId} role="img">
         <title id={labelAsId}>{label}</title>
-        <rect x="6" y="12" width="12" height="3" fill={color} style={{ opacity: 0.8 }} />
+        <rect x="6" y="12" width="12" height="3" fill={color} />
       </svg>
       {label}
     </>
