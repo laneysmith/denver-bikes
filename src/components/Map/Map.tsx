@@ -1,7 +1,8 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useMemo } from 'react';
 import ReactDOM from 'react-dom';
 import mapboxgl, { Map, Popup as PopupType } from 'mapbox-gl';
 
+import { COLOR_MAP, Color } from '../../constants';
 import { Popup } from '../Popup';
 
 import './_map.css';
@@ -19,6 +20,7 @@ const App: React.FC = () => {
   const mapRef = useRef<Map | null>();
   const mapContainerRef = useRef<HTMLDivElement>(document.createElement('div'));
   const popUpRef = useRef<PopupType>(new mapboxgl.Popup({ offset: 15, closeButton: false }));
+  const TypeColorFlatMap = useMemo(() => Object.entries(COLOR_MAP).flat(), []);
 
   useEffect(() => {
     mapRef.current = new mapboxgl.Map({
@@ -48,11 +50,11 @@ const App: React.FC = () => {
             type: 'circle',
             filter: ['has', 'point_count'],
             paint: {
-              'circle-color': '#51bbd6',
+              'circle-color': Color.Blue,
               'circle-opacity': 0.7,
               'circle-radius': ['step', ['get', 'point_count'], 10, 10, 20, 50, 30],
               'circle-stroke-width': 1,
-              'circle-stroke-color': '#fff',
+              'circle-stroke-color': Color.White,
               'circle-stroke-opacity': 0.8,
             },
           })
@@ -73,10 +75,10 @@ const App: React.FC = () => {
             type: 'circle',
             filter: ['!', ['has', 'point_count']],
             paint: {
-              'circle-color': '#11b4da',
+              'circle-color': Color.Blue,
               'circle-radius': 4,
               'circle-stroke-width': 1,
-              'circle-stroke-color': '#fff',
+              'circle-stroke-color': Color.White,
             },
           })
           .addLayer(
@@ -91,23 +93,7 @@ const App: React.FC = () => {
               },
               paint: {
                 'line-width': ['interpolate', ['exponential', 10], ['zoom'], 12, 4, 13, 6],
-                'line-color': [
-                  'match',
-                  ['get', 'type'],
-                  'Shared Roadway',
-                  '#E7185A',
-                  'Bike Lane',
-                  '#FFA500',
-                  'Buffered Bike Lane',
-                  '#90EE90',
-                  'Protected Bike Lane',
-                  '#50C878',
-                  'Shared Use Path',
-                  '#006400',
-                  'Trail',
-                  '#A0522D',
-                  '#CCC',
-                ],
+                'line-color': ['match', ['get', 'type'], ...TypeColorFlatMap, Color.Grey],
               },
             },
             'road-label'
@@ -140,7 +126,7 @@ const App: React.FC = () => {
       });
 
     return (): void => mapRef?.current?.remove();
-  }, []);
+  }, [TypeColorFlatMap]);
 
   return <div className="map-container" ref={mapContainerRef} />;
 };

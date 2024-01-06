@@ -6,12 +6,11 @@ interface TrailIconProps extends HTMLAttributes<HTMLElement> {
 }
 
 const TrailIcon: React.FC<TrailIconProps> = ({ label, color }) => {
-  const labelAsId = `${label.replace(/\s/g, '')}Icon`;
   return (
     <>
-      <svg className="legend-icon" viewBox="0 0 24 24" aria-labelledby={labelAsId} role="img">
-        <title id={labelAsId}>{label}</title>
-        <rect x="6" y="12" width="12" height="3" fill={color} />
+      <svg className="legend-icon" viewBox="0 0 24 24" role="img">
+        <title>{label}</title>
+        <rect x="6" y="6" width="12" height="12" fill={color} />
       </svg>
       {label}
     </>

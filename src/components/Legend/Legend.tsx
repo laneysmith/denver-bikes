@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Collapse } from 'react-collapse';
 
+import { COLOR_MAP } from '../../constants';
 import BikeRackIcon from './BikeRackIcon';
 import TrailIcon from './TrailIcon';
 
@@ -23,12 +24,9 @@ const Legend: React.FC = () => {
           <div className="legend-section labels">
             <label>Path type, listed most preferred (safest) to least preferred</label>
             <div className="legend-grid">
-              <TrailIcon label="Trail" color="#A0522D" />
-              <TrailIcon label="Shared Use Path" color="#006400" />
-              <TrailIcon label="Protected Bike Lane" color="#50C878" />
-              <TrailIcon label="Buffered Bike Lane" color="#90EE90" />
-              <TrailIcon label="Bike Lane" color="#FFA500" />
-              <TrailIcon label="Shared Roadway" color="#e7185a" />
+              {Object.entries(COLOR_MAP).map(([type, color]) => (
+                <TrailIcon key={type} label={type} color={color} />
+              ))}
             </div>
             <label>Bike resources</label>
             <div className="legend-grid">
