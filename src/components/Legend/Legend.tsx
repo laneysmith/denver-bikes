@@ -24,8 +24,8 @@ const Legend: React.FC = () => {
           <div className="legend-section labels">
             <label>Path type, listed most preferred (safest) to least preferred</label>
             <div className="legend-grid">
-              {Object.entries(COLOR_MAP).map(([type, color]) => (
-                <TrailIcon key={type} label={type} color={color} />
+              {Object.entries(COLOR_MAP).map(([facilityType, color]) => (
+                <TrailIcon key={facilityType} label={facilityType} color={color} />
               ))}
             </div>
             <label>Bike resources</label>

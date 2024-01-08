@@ -1,4 +1,4 @@
-const TYPES = [
+const FACILITY_TYPES = [
   'Trail',
   'Shared Use Path',
   'Protected Bike Lane',
@@ -8,7 +8,7 @@ const TYPES = [
   'Shared Roadway',
 ] as const;
 
-type Type = typeof TYPES[number];
+type FacilityType = typeof FACILITY_TYPES[number];
 
 export enum Color {
   // Paths
@@ -25,7 +25,7 @@ export enum Color {
   White = '#fff',
 }
 
-export const COLOR_MAP: Record<Type, Color> = {
+export const COLOR_MAP: Record<FacilityType, Color> = {
   Trail: Color.Brown,
   'Shared Use Path': Color.DarkGreen,
   'Protected Bike Lane': Color.Teal,
