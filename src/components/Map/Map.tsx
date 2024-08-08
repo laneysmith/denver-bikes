@@ -7,7 +7,7 @@ import { Popup } from '../Popup';
 
 import './_map.css';
 
-mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
+mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_ACCESS_TOKEN;
 
 const BIKE_FACILITIES_SOURCE = 'bike-facilities';
 const BIKE_FACILITIES_LAYER = 'bike-facilities-layer';
